@@ -4,7 +4,7 @@ require('./bootstrap');
 
 import Vue from 'vue'
 
-import App from './components/ExampleComponent'
+import App from './components/LoginComponent'
 
 const app = new Vue({
     el: '#app',

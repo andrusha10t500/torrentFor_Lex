@@ -1,4 +1,7 @@
 <template>
+    <!--<div class="row">-->
+        <!--<input type="checkbox" @click="registration" value="reg">-->
+    <!--</div>-->
     <form
         class="form"
         id="myForm"
@@ -33,6 +36,7 @@
 
         <p id="hui">{{ this.email1 }}</p>
 
+        <input type="checkbox" @click="registration" v-bind:value="reg">
 
     </form>
 </template>
@@ -45,7 +49,8 @@
                 email1: null,
                 email: null,
                 errors: [],
-                password: null
+                password: null,
+                reg: null
             }
         },
         created() {
@@ -108,10 +113,17 @@
                         console.log(error);
                         return false;
                     })
+            },
+
+            registration : function() {
+                // if (reg == true) {
+                //     reg = false;
+                // } else {
+                //     reg = true;
+                // }
+                alert(reg);
             }
-
         }
-
     }
 
 </script>

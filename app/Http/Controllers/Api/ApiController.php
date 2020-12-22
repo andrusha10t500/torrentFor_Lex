@@ -14,6 +14,8 @@ class ApiController extends Controller
 
         $email = $request["email"];
 //        return ApiResource::collection(User::query()->where("email","Lex@mail.ru"));
-        return User::query()->where("email",$request["email"] )->get("email");
+        return User::query()->where("email", $request["email"] )->get("email");
     }
+
+
 }
