@@ -36,11 +36,62 @@
 
         <p id="hui">{{ this.email1 }}</p>
 
-        <input type="checkbox" @click="registration" v-bind:value="reg">
+
+
+        <div class="sphere"
+             @click="alert()">
+            <transition name="slide">
+                <div
+                    v-bind:class="reg"
+                ></div>
+            </transition>
+        </div>
 
     </form>
 </template>
+<style>
+    .sphere {
+        border: solid 1px;
+        border-radius: 10px;
+        height : 50px;
+        width : 5em;
+        cursor: pointer;
+    }
+    div.sphere > div[class^="checkbox-"] {
+        border-radius: 50px;
+        border-radius: 10px;
+        height : inherit;
+        width: 50%;
+        background: greenyellow;
+    }
+    .checkbox-left {
+        float: left;
+        border-radius: 50px;
+        border-radius: 10px;
+        height : inherit;
+        width: 50%;
+        background: greenyellow;
+        transition: float 1s;
+    }
+    .checkbox-right {
+        float: right;
+        border-radius: 50px;
+        border-radius: 10px;
+        height : inherit;
+        width: 50%;
+        background: greenyellow;
+        transition: float 1s;
+    }
+    /*.slide-enter-active {*/
+        /*float: right;*/
+        /*transition: all 3s;*/
+    /*}*/
+    /*.slide-enter-to {*/
+        /*float : right;*/
+        /*transform: translateX(50px);*/
+    /*}*/
 
+</style>
 <script>
     import axios from 'axios';
     export default {
@@ -50,25 +101,25 @@
                 email: null,
                 errors: [],
                 password: null,
-                reg: null
+                reg: 'checkbox-left'
             }
         },
         created() {
 
         },
         mounted() {
-            console.log('Component mounted.')
+            // console.log('Component mounted.')
         },
         updated() {
-            console.log(this.email1);
-            console.log(this.email);
-            console.log(this.password);
-            console.log(this.validEmail(email));
+
+            // console.log(this.email);
+            // console.log(this.password);
+            // console.log(this.validEmail(email));
             if(this.email && this.password && this.validEmail(email) && this.email1) {
 
-                console.log("GO!");
+                // console.log("GO!");
             } else {
-                console.log("NO!");
+                // console.log("NO!");
             }
         },
         methods : {
@@ -114,16 +165,17 @@
                         return false;
                     })
             },
-
-            registration : function() {
-                // if (reg == true) {
-                //     reg = false;
-                // } else {
-                //     reg = true;
-                // }
-                alert(reg);
+            alert : function() {
+                if (this.reg == "checkbox-left") {
+                    this.reg = 'checkbox-right';
+                } else {
+                    this.reg = 'checkbox-left';
+                }
+                console.log(this.reg);
             }
         }
     }
 
 </script>
+
+
