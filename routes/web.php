@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/signup', [
+Route::post('/signup', [
     'uses' => 'UserController@signup',
     'as' => 'signup'
 ]);
 
-Route::get('/routeTorrentController',  [
+Route::get('/routeTorrentController/{name}',  [
    'uses' => 'torrentController@create',
    'as' =>  'create'
 ]);

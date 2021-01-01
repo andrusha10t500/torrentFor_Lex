@@ -6,6 +6,7 @@ use App\torrent;
 use App\User;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
@@ -27,12 +28,14 @@ class torrentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($name)
     {
         //при входе в программу
         $torrent = new torrent();
+//        $user = Auth::user()->name;
         //прописываем в таблице torrent юзера
-        $torrent->user=$torrent->belongsTo('App/User', 'name');
+//        $torrent->user=$torrent->hasOne('App\User', 'name');
+        $torrent->user = $name;
         $torrent->save();
     }
 

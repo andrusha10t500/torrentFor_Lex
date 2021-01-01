@@ -118,7 +118,9 @@
             if(this.email && this.password && this.validEmail(email) && this.email1) {
 
                 // console.log("GO!");
+
             } else {
+                // this.errors.push("Не прошли валидацию.")
                 // console.log("NO!");
             }
         },
@@ -153,7 +155,8 @@
             fetchData: function() {
                 axios
                     .post("/api/signin", {
-                       "email" : this.email
+                       "email" : this.email,
+                       "password" : this.password
                     })
                     .then(response => {
                         // console.log(response.data[0].email);
