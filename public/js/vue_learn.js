@@ -2056,7 +2056,9 @@ __webpack_require__.r(__webpack_exports__);
         "email": this.email,
         "password": this.password
       }).then(function (response) {
-        // console.log(response.data[0].email);
+        console.log(response.data[0].email);
+        console.log(response.data);
+        if (response.data != "прошёл в torrent") _this.errors.push(response.data);
         _this.email1 = response.data[0].email;
         return true;
       })["catch"](function (error) {

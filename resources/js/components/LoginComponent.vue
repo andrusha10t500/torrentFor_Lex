@@ -159,7 +159,11 @@
                        "password" : this.password
                     })
                     .then(response => {
-                        // console.log(response.data[0].email);
+                        console.log(response.data[0].email);
+                        console.log(response.data);
+                        if(response.data != "прошёл в torrent")
+                            this.errors.push(response.data);
+
                         this.email1 = response.data[0].email;
                         return true;
                     })

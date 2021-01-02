@@ -18,6 +18,7 @@ class torrentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -32,11 +33,16 @@ class torrentController extends Controller
     {
         //при входе в программу
         $torrent = new torrent();
-//        $user = Auth::user()->name;
+        $user = Auth::user()->name;
         //прописываем в таблице torrent юзера
 //        $torrent->user=$torrent->hasOne('App\User', 'name');
-        $torrent->user = $name;
-        $torrent->save();
+        if (torrent::where('user',$user)->count()==0) {
+            $torrent->user = $user;
+            $torrent->save();
+            return "прошёл в torrent";
+        }
+        return "Не прошёл в torrent";
+
     }
 
     /**

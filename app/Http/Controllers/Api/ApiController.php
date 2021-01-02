@@ -21,11 +21,14 @@ class ApiController extends Controller
         $email = $request["email"];
         $password = $request["password"];
         if(Auth::attempt(['email' => $email, 'password' => $password]) ){
-//            $user = Auth::user();
-//            Auth::login($user, true);
+            $user = Auth::user();
+            Auth::login($user, true);
             return redirect()->route('create',['name' => Auth::user()->name]);
+        } else {
+            return "Пользователь не аутентифицирован";
         }
-        return redirect()->back();
+
+//        return redirect()->back();
 //        return ApiResource::collection(User::query()->where("email","Lex@mail.ru"));
 //        return User::query()->where("email", $request["email"] )->get("email");
     }

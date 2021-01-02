@@ -22,5 +22,6 @@ Route::post('/signup', [
 
 Route::get('/routeTorrentController/{name}',  [
    'uses' => 'torrentController@create',
-   'as' =>  'create'
+   'as' =>  'create',
+   'middleware' => 'auth'
 ]);
