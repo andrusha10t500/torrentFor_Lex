@@ -20,10 +20,10 @@ class ApiController extends Controller
         ]);
         $email = $request["email"];
         $password = $request["password"];
-        if(Auth::attempt(['email' => $email, 'password' => $password]) ){
+        if(Auth::attempt(['email' => $email, 'password' => $password],true) ){
             $user = Auth::user();
             Auth::login($user, true);
-            return redirect()->route('create',['name' => Auth::user()->name]);
+            return redirect()->route('create',['name' => $user->name]);
         } else {
             return "Пользователь не аутентифицирован";
         }

@@ -42,7 +42,6 @@ class torrentController extends Controller
             return "прошёл в torrent";
         }
         return "Не прошёл в torrent";
-
     }
 
     /**

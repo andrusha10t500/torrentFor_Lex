@@ -46,7 +46,7 @@
                 ></div>
             </transition>
         </div>
-
+        <!--<input type="hidden" name="token" :value="csrf">-->
     </form>
 </template>
 <style>
