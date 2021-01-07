@@ -25,3 +25,8 @@ Route::get('/routeTorrentController/{name}',  [
    'as' =>  'create',
    'middleware' => 'auth'
 ]);
+
+Route::get('/routeTorrentController', [
+   'uses' => 'torrentController@showtorrents',
+   'as' => 'showtorrents'
+]);

@@ -7,6 +7,7 @@ use App\User;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
@@ -19,9 +20,21 @@ class torrentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function showtorrents()
     {
-        //
+//        if(Auth::user() != null) {
+        $tr=DB::table("torrent")->get('*');
+//            $tr = torrent::query()->get('*');
+            return response()->json([
+                'data' => $tr
+            ],
+                200);
+//        } else {
+//            return response()->json([
+//                'data' => 'Пользователь не аутентифицирован'
+//            ],401);
+//        }
+
     }
 
     /**
@@ -32,6 +45,7 @@ class torrentController extends Controller
     public function create($name)
     {
         //при входе в программу
+        $this->middleware('auth:api');
         $torrent = new torrent();
         $user = Auth::user()->name;
         //прописываем в таблице torrent юзера
@@ -42,6 +56,7 @@ class torrentController extends Controller
             return "прошёл в torrent";
         }
         return "Не прошёл в torrent";
+//        Auth::logout();
     }
 
     /**

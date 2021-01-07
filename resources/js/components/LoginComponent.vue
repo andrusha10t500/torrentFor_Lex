@@ -46,10 +46,10 @@
                 ></div>
             </transition>
         </div>
-        <!--<input type="hidden" name="token" :value="csrf">-->
+        <input type="hidden" name="token" :value="csrf">
     </form>
 </template>
-<style>
+<style lang="scss">
     .sphere {
         border: solid 1px;
         border-radius: 10px;
@@ -71,7 +71,7 @@
         height : inherit;
         width: 50%;
         background: greenyellow;
-        transition: float 1s;
+        transition: float 1000s;
     }
     .checkbox-right {
         float: right;
@@ -80,7 +80,7 @@
         height : inherit;
         width: 50%;
         background: greenyellow;
-        transition: float 1s;
+        transition: float 1000ms;
     }
     /*.slide-enter-active {*/
         /*float: right;*/
@@ -101,7 +101,8 @@
                 email: null,
                 errors: [],
                 password: null,
-                reg: 'checkbox-left'
+                reg: 'checkbox-left',
+                csrf : null
             }
         },
         created() {
@@ -169,6 +170,7 @@
                     })
                     .catch(error => {
                         console.log(error);
+                        this.errors.push(error);
                         return false;
                     })
             },

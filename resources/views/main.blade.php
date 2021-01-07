@@ -11,7 +11,9 @@
     <div class="container">
             <App></App>
     </div>
-
+    <div class="container">
+        <Torrent></Torrent>
+    </div>
 </div>
 <script src="{{ mix('js/vue_learn.js') }}"></script>
 </body>
