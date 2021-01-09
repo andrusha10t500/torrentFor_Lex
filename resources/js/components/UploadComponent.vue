@@ -7,6 +7,7 @@
             method="post"
             v-if="show_form_insert"
     >
+
         <input type="hidden" name="token" :value="csrf">
         <input
                 class="form-control"

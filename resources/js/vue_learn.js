@@ -6,7 +6,7 @@ import Vue from 'vue'
 
 import App from './components/LoginComponent'
 import Torrent from './components/TorrentComponent'
-import Upload from './components/UploadComponenet'
+import Upload from './components/UploadComponent'
 
 const app = new Vue({
     el: '#app',
