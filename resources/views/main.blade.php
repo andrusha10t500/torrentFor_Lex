@@ -9,7 +9,10 @@
 <body>
 <div id="app">
     <div class="container">
-            <App></App>
+        <App></App>
+    </div>
+    <div class="container">
+        <Upload></Upload>
     </div>
     <div class="container">
         <Torrent></Torrent>

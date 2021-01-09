@@ -2,19 +2,23 @@
     <!--<div class="row">-->
         <!--<input type="checkbox" @click="registration" value="reg">-->
     <!--</div>-->
+    <!--Форма авторизации-->
     <form
-        class="form"
+        class="form-group"
         id="myForm"
         action="#"
         @submit="checkForm"
         method="post"
+        v-if="show_signin"
     >
+        <!--Блок ошибок-->
         <div v-if="errors.length">
             <b>Ошибки:</b>
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
             </ul>
         </div>
+        <!--Блок ошибок-->
         <label for="email">Почта</label>
         <input
             class="form-control"
@@ -34,22 +38,21 @@
         />
         <input type="submit" value="ok">
 
-        <p id="hui">{{ this.email1 }}</p>
+        <p id="hui">{{ this.show_signin }}</p>
 
-
-
-        <div class="sphere"
-             @click="alert()">
-            <transition name="slide">
+        <div class="sphere">
                 <div
                     v-bind:class="reg"
                 ></div>
-            </transition>
         </div>
-        <input type="hidden" name="token" :value="csrf">
+
+        <!--<input type="hidden" name="token" :value="csrf">-->
     </form>
+    <!--Форма авторизации конец-->
+
+
 </template>
-<style lang="scss">
+<style >
     .sphere {
         border: solid 1px;
         border-radius: 10px;
@@ -65,14 +68,18 @@
         background: greenyellow;
     }
     .checkbox-left {
-        float: left;
+        /*float: left;*/
+        display: block;
         border-radius: 50px;
         border-radius: 10px;
+        margin-left: 0px;
         height : inherit;
         width: 50%;
+        margin-right: 100px;
         background: greenyellow;
-        transition: float 1000s;
+        /*transition: margin-right 1000s ease-out;*/
     }
+
     .checkbox-right {
         float: right;
         border-radius: 50px;
@@ -80,16 +87,14 @@
         height : inherit;
         width: 50%;
         background: greenyellow;
-        transition: float 1000ms;
+        /*transition: float 1000ms;*/
     }
-    /*.slide-enter-active {*/
-        /*float: right;*/
-        /*transition: all 3s;*/
-    /*}*/
-    /*.slide-enter-to {*/
-        /*float : right;*/
-        /*transform: translateX(50px);*/
-    /*}*/
+    .fade-enter-active:active, .fade-leave-active {
+        transition: left .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        left: 50px;
+    }
 
 </style>
 <script>
@@ -97,7 +102,7 @@
     export default {
         data() {
             return {
-                email1: null,
+                show_signin: true,
                 email: null,
                 errors: [],
                 password: null,
@@ -106,7 +111,7 @@
             }
         },
         created() {
-
+            // this.fSignIn();
         },
         mounted() {
             // console.log('Component mounted.')
@@ -116,14 +121,14 @@
             // console.log(this.email);
             // console.log(this.password);
             // console.log(this.validEmail(email));
-            if(this.email && this.password && this.validEmail(email) && this.email1) {
+            // if(this.email && this.password && this.validEmail(email) && this.show_signin) {
 
                 // console.log("GO!");
 
-            } else {
+            // } else {
                 // this.errors.push("Не прошли валидацию.")
                 // console.log("NO!");
-            }
+            // }
         },
         methods : {
             checkForm: function(e) {
@@ -140,7 +145,7 @@
                     this.errors.push('Не указали Пароль');
                 }
 
-                this.fetchData();
+                console.log(this.fetchData());
 
                 e.preventDefault();
 
@@ -160,28 +165,30 @@
                        "password" : this.password
                     })
                     .then(response => {
-                        console.log(response.data[0].email);
+                        // console.log(response.data[0].email);
                         console.log(response.data);
                         if(response.data != "прошёл в torrent")
                             this.errors.push(response.data);
 
-                        this.email1 = response.data[0].email;
-                        return true;
+                        this.show_signin = false;
                     })
                     .catch(error => {
                         console.log(error);
                         this.errors.push(error);
-                        return false;
                     })
             },
             alert : function() {
-                if (this.reg == "checkbox-left") {
-                    this.reg = 'checkbox-right';
-                } else {
-                    this.reg = 'checkbox-left';
-                }
+                // if (this.reg == "checkbox-left") {
+                //     this.reg = 'checkbox-right';
+                // } else {
+                //     this.reg = 'checkbox-left';
+                // }
                 console.log(this.reg);
-            }
+            },
+
+        },
+        destroyed() {
+
         }
     }
 

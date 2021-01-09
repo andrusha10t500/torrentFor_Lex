@@ -8,6 +8,7 @@ use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
@@ -45,7 +46,7 @@ class torrentController extends Controller
     public function create($name)
     {
         //при входе в программу
-        $this->middleware('auth:api');
+//        $this->middleware('auth:api');
         $torrent = new torrent();
         $user = Auth::user()->name;
         //прописываем в таблице torrent юзера
@@ -68,26 +69,47 @@ class torrentController extends Controller
     public function store(Request $request)
     {
         //при закачивании торрента
-        $torrent = new torrent();
-        //записываем файл в переменную
-        $file=$request->file('torrent');
+        if($request instanceof File) {
 
-        //------------нужна проверка во избежании дублирующих файлов в хранилище!!!------------
-        $valid=Validator::make($file->getPathname(),$torrent::$double);
+            $torrent = new torrent();
+            //записываем файл в переменную
+            $file = $request->file('torrent');
 
-        //Если файл существует и прошёл валидацию, то закидываем его в хранилище
-        if($file && $valid->passes()) {
-            //закидываем на жёский диск файл
-            Storage::disk('local')->put($file->getPathname(),File::get($file));
+            //------------нужна проверка во избежании дублирующих файлов в хранилище!!!------------
+            $valid = Validator::make($file->getPathname(), $torrent::$double);
 
-            //закидываем имя файла и дату закачки в модель torrent
-            $torrent->torrent = $file->getPathname();
-            //дата есть в updated_at
-            $torrent->save();
+            //Если файл существует и прошёл валидацию, то закидываем его в хранилище
+            if ($file && $valid->passes()) {
+                //закидываем на жёский диск файл
+                Storage::disk('local')->put($file->getPathname(), File::get($file));
+
+                //закидываем имя файла и дату закачки в модель torrent
+                $torrent->torrent = $file->getPathname();
+                //дата есть в updated_at
+                $torrent->save();
+            } else {
+                //Показать что такой файл уже существует в вёрстке
+            }
         } else {
-            //Показать что такой файл уже существует в вёрстке
+            $string=$request['torrent'];
+
+            $string=substr($string,
+                strpos($string,"=http")+1,
+                strpos($string,".torrent")-strpos($string,"=http")+7
+            );
+
+            Storage::disk('local')->put('public/file1.torrent',file_get_contents($string),'public');
+
+//            if(file_put_contents("myTorrent.torrent", file_get_contents($string))) {
+//                return "true";
+//            }else {
+//                return "false";
+//            }
+
         }
     }
+
+
 
     /**
      * Display the specified resource.

@@ -30,3 +30,8 @@ Route::get('/routeTorrentController', [
    'uses' => 'torrentController@showtorrents',
    'as' => 'showtorrents'
 ]);
+
+Route::post('/sendtorrent', [
+   'uses' => 'torrentController@store',
+   'as' => 'sendtorrent'
+]);
