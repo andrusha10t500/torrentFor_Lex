@@ -91,14 +91,14 @@ class torrentController extends Controller
                 //Показать что такой файл уже существует в вёрстке
             }
         } else {
-            $string=$request['torrent'];
+            $string=urldecode($request['torrent']);
 
             $string=substr($string,
                 strpos($string,"=http")+1,
                 strpos($string,".torrent")-strpos($string,"=http")+7
             );
 
-            Storage::disk('local')->put('public/file1.torrent',file_get_contents($string),'public');
+            Storage::disk('local')->put('/public/file2.torrent',file_get_contents($string),'public');
 
 //            if(file_put_contents("myTorrent.torrent", file_get_contents($string))) {
 //                return "true";

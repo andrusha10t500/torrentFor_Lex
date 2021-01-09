@@ -11,6 +11,7 @@
         method="post"
         v-if="show_signin"
     >
+
         <!--Блок ошибок-->
         <div v-if="errors.length">
             <b>Ошибки:</b>

@@ -3,7 +3,7 @@
     <form
             class="form-group"
             action="#"
-            @submit="send_torrent"
+            @submit="sendTorrent"
             method="post"
             v-if="show_form_insert"
     >
@@ -14,8 +14,8 @@
                 type="text"
                 v-model="input_torrent_text"
                 placeholder="вставьте ссылку"
-                name="link_torrent"
-                id="link_torrent"
+                name="input_torrent_text"
+                id="input_torrent_text"
         >
         <!--<input-->
         <!--class="form-control"-->
@@ -25,6 +25,7 @@
         <!--ref="file_torrent"-->
         <!--v-on:change="FileUpload()"-->
         <!--&gt;-->
+        <input type="hidden" name="token" :value="csrf">
         <input type="submit" value="добавить">
     </form>
 
@@ -32,29 +33,22 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         data() {
             return {
                 input_torrent_text : null,
                 input_torrent_file : null,
                 show_form_insert: true,
-                errors : []
+                errors : [],
+                csrf: null
             }
         },
         created() {
 
         },
         methods : {
-            send_torrent: function () {
-                // var input_return;
-
-                // if(this.input_torrent_file == null) {
-                //     input_return = this.input_torrent_text;
-                // } else {
-                //     let form = new FormData();
-                //     form.append('file',this.input_torrent_file);
-                //     input_return=form;
-                // }
+            sendTorrent: function (e) {
 
                 axios
                     .post("/sendtorrent", {
@@ -66,6 +60,7 @@
                     .catch(error => {
                         this.errors.push(error);
                     })
+                e.preventDefault();
             },
             FileUpload : function() {
                 this.input_torrent_file=this.$refs.file_torrent.files[0];
