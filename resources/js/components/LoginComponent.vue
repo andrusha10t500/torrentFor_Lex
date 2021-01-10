@@ -169,7 +169,7 @@
                         // console.log(response.data[0].email);
                         console.log(response.data);
                         if(response.data != "прошёл в torrent")
-                            this.errors.push(response.data);
+                            this.errors.push(response.data.data);
 
                         this.show_signin = false;
                     })

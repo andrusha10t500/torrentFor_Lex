@@ -8,9 +8,9 @@
 </head>
 <body>
 <div id="app">
-    <div class="container">
-        <App></App>
-    </div>
+    {{--<div class="container">--}}
+        {{--<App></App>--}}
+    {{--</div>--}}
     <div class="container">
         <Upload></Upload>
     </div>

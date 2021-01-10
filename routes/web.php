@@ -35,3 +35,8 @@ Route::post('/sendtorrent', [
    'uses' => 'torrentController@store',
    'as' => 'sendtorrent'
 ]);
+
+Route::post('/deleteTorrent',[
+   'uses' => 'torrentController@deleteTorrent',
+   'as' => 'deleteTorrent'
+]);

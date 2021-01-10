@@ -31,6 +31,11 @@
                 <td>
                     {{ torrent['when_downloaded'] }}
                 </td>
+                <td>
+                    <button
+                        @click="deleteTorrent(torrent['id'])"
+                    >delete</button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -55,6 +60,21 @@
                 .catch(error => {
                     this.errors.push(error);
                 })
+        },
+        methods : {
+            deleteTorrent: function(idTorrent) {
+                axios
+                    .post('/deleteTorrent',{
+                        'id' : idTorrent
+                    })
+                    .then(response => {
+                        console.log(response.data.data);
+                        location.reload();
+                    })
+                    .catch(error => {
+                        this.errors.push(error);
+                    })
+            }
         }
     }
 </script>

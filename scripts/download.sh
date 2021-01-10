@@ -14,8 +14,8 @@ while [ $i -le 51433 ]
   PORT=${IP##*:}
   if [ -z "$PORT" ]
     then
-      echo "transmission-cli -p $i -w /mnt/diskG/films/ $1"
-      transmission-cli -p $i -w /mnt/diskG/films/ $1
+      echo "transmission-cli -p $i -w /home/leo/download/ $1"
+      transmission-cli -p $i -w /home/leo/download/ $1
       break
     else
       echo "continue $PORT"
@@ -24,3 +24,5 @@ while [ $i -le 51433 ]
   echo $i
   i=$[ $i + 1 ]
 done
+#transmission-cli --finish <script>
+#Указать скрипт, который будет закидывать в БД о завершении загрузки

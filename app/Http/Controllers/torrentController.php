@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\torrent;
+use App\Torrents;
 use App\User;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+use Symfony\Component\Process\Process;
 
 class torrentController extends Controller
 {
@@ -24,7 +26,7 @@ class torrentController extends Controller
     public function showtorrents()
     {
 //        if(Auth::user() != null) {
-        $tr=DB::table("torrent")->get('*');
+        $tr=DB::table("torrents")->orderBy("created_at") ->get('*');
 //            $tr = torrent::query()->get('*');
             return response()->json([
                 'data' => $tr
@@ -98,7 +100,42 @@ class torrentController extends Controller
                 strpos($string,".torrent")-strpos($string,"=http")+7
             );
 
-            Storage::disk('local')->put('/public/file2.torrent',file_get_contents($string),'public');
+            $name = substr(
+                $string,
+                strripos($string,"/",-1)+1,
+                strlen($string)-strripos($string,"/",-1)+1
+            );
+
+            $name=urldecode($name);
+
+            Storage::disk('local')->put('/public/'.$name,file_get_contents($string),'public');
+
+            $torrents = new Torrents();
+
+            $torrents->user="admin";
+            $torrents->torrent=$name;
+
+//            $torrents->when_downloaded=Date('d.m.Y H:i:s');
+            if(Torrents::query()
+                    ->where('torrent','=',$name)
+                    ->count()==0)
+            {
+                $torrents->save();
+                $process=new Process("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
+                $process->run();
+                if($process->isSuccessful()) {
+                    return "Все заебись";
+                } else if ($process->isStarted()) {
+                    return "процесс стартовал";
+                } else if ($process->isRunning()) {
+                    return "процесс стартовал";
+                }
+//                $shell=exec("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
+//                $shell->run();
+            } else {
+                return 'Такой торрент уже загружен';
+            }
+
 
 //            if(file_put_contents("myTorrent.torrent", file_get_contents($string))) {
 //                return "true";
@@ -176,10 +213,13 @@ class torrentController extends Controller
      * @param  \App\torrent  $torrent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(torrent $torrent)
+    public function deleteTorrent(Request $id)
     {
-
-        //торрент успешно загружен
+        $id=$id['id'];
+        //торрент удален
+        $name = Torrents::query()->where('id','=',$id)->value("torrent");
+        Torrents::query()->where("id",'=',$id)->delete();
+        Storage::disk('local')->delete('/public/'.$name);
 
     }
 }

@@ -2067,7 +2067,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         // console.log(response.data[0].email);
         console.log(response.data);
-        if (response.data != "прошёл в torrent") _this.errors.push(response.data);
+        if (response.data != "прошёл в torrent") _this.errors.push(response.data.data);
         _this.show_signin = false;
       })["catch"](function (error) {
         console.log(error);
@@ -2138,6 +2138,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2154,6 +2159,21 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       _this.errors.push(error);
     });
+  },
+  methods: {
+    deleteTorrent: function deleteTorrent(idTorrent) {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/deleteTorrent', {
+        'id': idTorrent
+      }).then(function (response) {
+        console.log(response.data.data);
+
+        _this2.reload();
+      })["catch"](function (error) {
+        _this2.errors.push(error);
+      });
+    }
   }
 });
 
@@ -38546,6 +38566,20 @@ var render = function() {
                 "\n                " +
                   _vm._s(torrent["when_downloaded"]) +
                   "\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteTorrent(torrent["id"])
+                    }
+                  }
+                },
+                [_vm._v("delete")]
               )
             ])
           ])

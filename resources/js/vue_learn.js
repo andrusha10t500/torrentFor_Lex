@@ -10,7 +10,7 @@ import Upload from './components/UploadComponent'
 
 const app = new Vue({
     el: '#app',
-    components: {App, Torrent, Upload}
+    components: { App, Torrent, Upload}
 
     // props: ['innerHTML'],
     // template: '<div class="col-md-1 offset-md-1">122</div>'

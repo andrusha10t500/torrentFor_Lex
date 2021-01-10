@@ -64,7 +64,11 @@
             },
             FileUpload : function() {
                 this.input_torrent_file=this.$refs.file_torrent.files[0];
+            },
+            deleteTorrent : function() {
+
             }
+
         }
     }
 </script>
