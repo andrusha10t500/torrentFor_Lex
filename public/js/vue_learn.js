@@ -2168,8 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
         'id': idTorrent
       }).then(function (response) {
         console.log(response.data.data);
-
-        _this2.reload();
+        location.reload();
       })["catch"](function (error) {
         _this2.errors.push(error);
       });
@@ -2243,6 +2242,7 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/sendtorrent", {
         "torrent": this.input_torrent_text
       }).then(function (response) {
+        location.reload();
         console.log(response.data);
       })["catch"](function (error) {
         _this.errors.push(error);
@@ -51249,7 +51249,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
+module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
 
 
 /***/ })

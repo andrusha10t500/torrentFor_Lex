@@ -2168,8 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
         'id': idTorrent
       }).then(function (response) {
         console.log(response.data.data);
-
-        _this2.reload();
+        location.reload();
       })["catch"](function (error) {
         _this2.errors.push(error);
       });
@@ -51044,8 +51043,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

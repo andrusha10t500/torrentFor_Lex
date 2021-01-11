@@ -55,6 +55,7 @@
                         "torrent" : this.input_torrent_text
                     })
                     .then(response => {
+                        location.reload();
                         console.log(response.data);
                     })
                     .catch(error => {

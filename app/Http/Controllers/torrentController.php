@@ -121,7 +121,7 @@ class torrentController extends Controller
                     ->count()==0)
             {
                 $torrents->save();
-                $process=new Process("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
+                $process=new Process("/home/leo/document/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
                 $process->run();
                 if($process->isSuccessful()) {
                     return "Все заебись";
