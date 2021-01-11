@@ -26,3 +26,7 @@ while [ $i -le 51433 ]
 done
 #transmission-cli --finish <script>
 #Указать скрипт, который будет закидывать в БД о завершении загрузки
+#Добавить в базу строчку где будет храниться pid, но в transmission-cli --finish <script> указать пустой после завершения скачивания
+#ps aux | awk '$13~/Iron_Man.mkv_37716.torrent/{print($2)}' - номер pid'а, который нужно будет убить по завершению либо по требованию пользователя:
+#kill -9 $(ps aux | awk '$13~/Iron_Man.mkv_37716.torrent/{print($2)}')
+#
