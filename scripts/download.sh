@@ -14,16 +14,24 @@ while [ $i -le 51433 ]
   PORT=${IP##*:}
   if [ -z "$PORT" ]
     then
-      echo "transmission-cli -p $i -w /mnt/diskG/films/ $1"
-      transmission-cli -p $i -w /mnt/diskG/films/ $1
+      #echo "transmission-cli -p $i -w /home/leo/Загрузки/ $1"
+      transmission-cli -p $i -w /home/leo/ $1
       break
-    else
-      echo "continue $PORT"
+    #else
+      #echo "continue $PORT"
       #continue
   fi
-  echo $i
+  #echo $i
   i=$[ $i + 1 ]
 done
+#sleep 3
+#PID=$(ps aux | awk '$13~/'$1'/{print($2)}')
+#DBLOGIN=
+#DBPASSWORD=
+#DBNAME=
+#MYPID=$(echo $PID | awk 'NR~/1/{print($1)}')
+#mysql -u $DBLOGIN -p$DBPASSWORD -D $DBNAME -e "UPDATE torrents SET \`pid\`='$MYPID' WHERE \`torrent\`='$1'"
+
 #transmission-cli --finish <script>
 #Указать скрипт, который будет закидывать в БД о завершении загрузки
 #Добавить в базу строчку где будет храниться pid, но в transmission-cli --finish <script> указать пустой после завершения скачивания

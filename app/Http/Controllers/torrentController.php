@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\execJob;
 use App\torrent;
 use App\Torrents;
 use App\User;
+use Carbon\Carbon;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Queue\Queue;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -115,73 +118,35 @@ class torrentController extends Controller
             $torrents->user="admin";
             $torrents->torrent=$name;
 
+
 //            $torrents->when_downloaded=Date('d.m.Y H:i:s');
             if(Torrents::query()
                     ->where('torrent','=',$name)
                     ->count()==0)
             {
                 $torrents->save();
-                $process=new Process("/home/leo/document/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
-                $process->run();
-                if($process->isSuccessful()) {
-                    return "Все заебись";
-                } else if ($process->isStarted()) {
-                    return "процесс стартовал";
-                } else if ($process->isRunning()) {
-                    return "процесс стартовал";
-                }
-//                $shell=exec("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
-//                $shell->run();
+//                $process=new Process("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
+//                $process->start();
+//                if($process->isSuccessful()) {
+
+//                \Illuminate\Support\Facades\Queue::push(new execJob($name));
+                $job=(new execJob(storage_path()."/app/public/".$name))->delay(Carbon::now()->addSecond(5));
+                $this->dispatch($job);
+
+
+                Torrents::query()->where("torrent","=", $name)->update([
+                    "download" => '0',  //0 - Загрузка началась, null - файла нет, 1 - Загрузка закончилась
+                    "notes" => storage_path()."/app/public/".$name  //ссылка на файл
+                ]);
+
             } else {
                 return 'Такой торрент уже загружен';
             }
 
 
-//            if(file_put_contents("myTorrent.torrent", file_get_contents($string))) {
-//                return "true";
-//            }else {
-//                return "false";
-//            }
-
         }
     }
 
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\torrent  $torrent
-     * @return \Illuminate\Http\Response
-     */
-    public function show(torrent $torrent)
-    {
-        //здесь отправим письмо о том, что началась загрузка или нет и что делать
-        $user = $torrent->belongsTo('App/User','name');
-        $email = $torrent->belongsTo('App/User','email');
-
-        //------------нужна проверка какая нибудь началась загрузка или нет------------
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\torrent  $torrent
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(torrent $torrent)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\torrent  $torrent
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, torrent $torrent)
     {
         $name = $torrent->belongsTo('App/User','name');
@@ -218,8 +183,9 @@ class torrentController extends Controller
         $id=$id['id'];
         //торрент удален
         $name = Torrents::query()->where('id','=',$id)->value("torrent");
+//        $pid = Torrents::query()->where('id','=',$id)->value("torrent");
         Torrents::query()->where("id",'=',$id)->delete();
         Storage::disk('local')->delete('/public/'.$name);
-
+        $killProcess=new Process("");
     }
 }
