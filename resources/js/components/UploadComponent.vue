@@ -55,15 +55,15 @@
                         "torrent" : this.input_torrent_text
                     })
                     .then(response => {
-
                         console.log(response.data.data);
-                        // location.reload();
+                        location.reload();
+                        // store.commit('reloadF');
                     })
                     .catch(error => {
 
                         this.errors.push(error);
                     })
-                // location.reload();
+
                 e.preventDefault();
             },
             FileUpload : function() {

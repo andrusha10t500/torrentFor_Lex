@@ -2148,7 +2148,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       torrents: [],
-      errors: []
+      errors: [] // store: store
+
     };
   },
   created: function created() {
@@ -2242,11 +2243,11 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/sendtorrent", {
         "torrent": this.input_torrent_text
       }).then(function (response) {
-        console.log(response.data);
+        console.log(response.data.data);
+        location.reload(); // store.commit('reloadF');
       })["catch"](function (error) {
         _this.errors.push(error);
       });
-      location.reload();
       e.preventDefault();
     },
     FileUpload: function FileUpload() {
@@ -51225,9 +51226,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
 
 
+ // import Vuex from 'vuex'
+// Vue.use(Vuex)
 
 
 
+ // const store = new Vuex.Store({
+//     state: {
+//         reload : false
+//     },
+//     mutations : {
+//         reloadF (state) {
+//             state.reload = !state.reload;
+//         }
+//     }
+// });
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
@@ -51235,7 +51248,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     App: _components_LoginComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
     Torrent: _components_TorrentComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
     Upload: _components_UploadComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
-  } // props: ['innerHTML'],
+  } // ,    store: store
+  // props: ['innerHTML'],
   // template: '<div class="col-md-1 offset-md-1">122</div>'
 
 });
@@ -51249,7 +51263,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
+module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
 
 
 /***/ })

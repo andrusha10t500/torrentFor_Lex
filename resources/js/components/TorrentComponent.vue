@@ -48,6 +48,7 @@
             return {
                 torrents : [],
                 errors: []
+                // store: store
             }
 
         },
