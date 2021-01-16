@@ -2,12 +2,18 @@
 
 namespace App\Jobs;
 
+use App\Torrents;
 use Illuminate\Bus\Queueable;
+use Illuminate\Database\QueryException;
 use Illuminate\Queue\Jobs\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class execJob implements ShouldQueue
@@ -20,9 +26,12 @@ class execJob implements ShouldQueue
      * @return void
      */
     protected $nameTorrent;
-    public function __construct($name)
+    protected $name;
+
+    public function __construct($nameTorrent, $name)
     {
-        $this->nameTorrent=$name;
+        $this->nameTorrent=$nameTorrent;
+        $this->name=$name;
     }
 
     /**
@@ -32,8 +41,107 @@ class execJob implements ShouldQueue
      */
     public function handle()
     {
-        $shell = Process::fromShellCommandline("/usr/bin/transmission-cli -w /mnt/diskG/films/ ".$this->nameTorrent."; sleep 5");
-        $shell->run();
+        $scriptContent = '#!/bin/bash
 
+DBUSER=root
+DBPASSWORD=qt67uy
+DATABASE=torrent                        
+
+mysql -u$DBUSER -p$DBPASSWORD -D$DATABASE -e "UPDATE torrents SET download=1, when_downloaded=now() WHERE torrent=\''.$this->name.'\'"
+        ';
+        $scriptName='/home/leo/document/torrentFor_Lex/scripts/update_'.$this->name.'.sh';
+
+        File::put($scriptName,$scriptContent);
+
+        $shell = Process::fromShellCommandline(
+"
+        chmod +x /home/leo/document/torrentFor_Lex/scripts/update_$this->name.sh
+        i=51413;
+        while [ \$i -le 51433 ]
+          do
+            IP=\$(netstat -n | grep \$i | tail -n 1 | awk '{print(\$4)}')
+            PORT=\${IP##*:}
+            if [ -z \"\$PORT\" ]
+              then 
+                /usr/bin/transmission-cli -p \$i -w /mnt/diskG/films/ $this->nameTorrent -f /home/leo/document/torrentFor_Lex/scripts/update_$this->name.sh;
+                break
+            fi
+           i=\$(( i+1 ))
+        done
+        ");
+
+        try {
+            $shell->mustRun(
+                function($type, $buffer) {
+
+                    if (Process::ERR === $type) {
+                        echo 'ERR > '.$buffer;
+                    } else {
+                        echo 'OUT > '.$buffer;
+                    }
+                }
+            );
+            echo 'try mustRun: '.$shell->getOutput();
+        } catch (ProcessFailedException $e) {
+            echo 'Exception mustRun: '.$e->getMessage();
+        }
+
+
+
+        if($shell->getStatus()==Process::STATUS_STARTED) {
+            echo 'Status: Started';
+        } else if($shell->getStatus()==Process::STATUS_TERMINATED) {
+            echo 'Status: Terminated';
+            try {
+                DB::table('torrents')->
+                where('torrent', '=', "'". $this->name . "'")->
+                update([
+                    'download' => 'null'
+                ]);
+            } catch (QueryException $e) {
+                echo 'errorDB: '.$e->getMessage();
+            }
+        }
+
+        if($shell->isRunning() || $shell->isStarted()){
+
+            try {
+                DB::table('torrents')->
+                where('torrent', '=', "'" . $this->name . "'" )->
+                update([
+                    'download' => '0'
+                ]);
+            } catch (QueryException $e) {
+                echo 'errorDB: '.$e->getMessage();
+            }
+
+        } else if($shell->isSuccessful()) {
+
+            try {
+                DB::table('torrents')->
+                where('torrent', '=', "'" . $this->name . "'")->
+                update([
+                    'download' => '1'
+                ]);
+            } catch (QueryException $e) {
+                echo 'errorDB: '.$e->getMessage();
+            }
+        } else if(!$shell->isSuccessful()){
+
+            try {
+                DB::table('torrents')->
+                where('torrent', '=', "'" . $this->name . "'")->
+                update([
+                    'download' => 'null'
+                ]);
+            } catch (QueryException $e) {
+                echo 'errorDB: '.$e->getMessage();
+            }
+        }
+
+    }
+    public function failed($exception = null)
+    {
+        echo $exception;
     }
 }

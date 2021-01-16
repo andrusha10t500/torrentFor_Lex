@@ -117,33 +117,25 @@ class torrentController extends Controller
 
             $torrents->user="admin";
             $torrents->torrent=$name;
-
-
+            $torrents->save();
+//
 //            $torrents->when_downloaded=Date('d.m.Y H:i:s');
             if(Torrents::query()
                     ->where('torrent','=',$name)
                     ->count()==0)
             {
-                $torrents->save();
-//                $process=new Process("/home/leo/Документы/web_projects/torrentFor_Lex/scripts/download.sh ".storage_path()."/app/public/".$name);
-//                $process->start();
-//                if($process->isSuccessful()) {
 
-//                \Illuminate\Support\Facades\Queue::push(new execJob($name));
-                $job=(new execJob(storage_path()."/app/public/".$name))->delay(Carbon::now()->addSecond(5));
+                $job=(new execJob(storage_path()."/app/public/".$name, $name))->delay(Carbon::now()->addSecond(5));
                 $this->dispatch($job);
 
-
                 Torrents::query()->where("torrent","=", $name)->update([
-                    "download" => '0',  //0 - Загрузка началась, null - файла нет, 1 - Загрузка закончилась
+    //                    "download" => '0',  //0 - Загрузка началась, null - файла нет, 1 - Загрузка закончилась
                     "notes" => storage_path()."/app/public/".$name  //ссылка на файл
                 ]);
 
             } else {
                 return 'Такой торрент уже загружен';
             }
-
-
         }
     }
 
@@ -186,6 +178,7 @@ class torrentController extends Controller
 //        $pid = Torrents::query()->where('id','=',$id)->value("torrent");
         Torrents::query()->where("id",'=',$id)->delete();
         Storage::disk('local')->delete('/public/'.$name);
-        $killProcess=new Process("");
+        //удалить скрипт
+        File::delete("/home/leo/document/torrentFor_Lex/scripts/update_".$name.".sh");
     }
 }

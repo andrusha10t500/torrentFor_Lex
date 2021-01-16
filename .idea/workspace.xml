@@ -5,16 +5,12 @@
     <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php" line="19" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88b3cab9-39a7-4470-a2d7-1958b0907905" name="Default" comment="delete">
+    <list default="true" id="88b3cab9-39a7-4470-a2d7-1958b0907905" name="Default" comment="jobs">
+      <change afterPath="$PROJECT_DIR$/scripts/runDocker.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/vue_learn.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vue_learn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/TorrentComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TorrentComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/UploadComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/UploadComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue_learn.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue_learn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/execJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/execJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +55,7 @@
         <item name="torrent@127.0.0.1" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="torrent: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="jobs: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="torrents: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -69,95 +65,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="torrentController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="torrentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="133" column="38" lean-forward="true" selection-start-line="133" selection-start-column="38" selection-end-line="133" selection-end-column="38" />
+            <state relative-caret-position="574">
+              <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+              <folding>
+                <element signature="e#4988#5884#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="execJob.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="execJob.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/execJob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="34" column="126" selection-start-line="34" selection-start-column="126" selection-end-line="34" selection-end-column="126" />
+            <state relative-caret-position="541">
+              <caret line="65" column="141" selection-start-line="65" selection-start-column="141" selection-end-line="65" selection-end-column="141" />
               <folding>
-                <element signature="e#28#57#0#PHP" expanded="true" />
+                <element signature="e#28#45#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php">
+      <file leaf-file-name="runDocker.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/runDocker.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="442" column="26" selection-start-line="442" selection-start-column="26" selection-end-line="442" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="queue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/queue.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue_learn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/vue_learn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding>
-                <element signature="e#125#170#0" expanded="true" />
-                <marker date="1610707419480" expanded="true" signature="278:484" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console_1.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadComponent.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/UploadComponent.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TorrentComponent.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/TorrentComponent.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+            <state relative-caret-position="30">
+              <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -167,7 +103,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>queue</find>
+      <find>isnull</find>
+      <find>$this-&gt;name</find>
     </findStrings>
+    <replaceStrings>
+      <replace>&quot;'&quot; . $this-&gt;name . &quot;'&quot;</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -180,10 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/app/torrent.php" />
-        <option value="$PROJECT_DIR$/public/js/vue_learn.js" />
-        <option value="$PROJECT_DIR$/public/mix-manifest.json" />
         <option value="$PROJECT_DIR$/node_modules/popper.js/dist/popper.js" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
@@ -210,23 +147,31 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console_2.sql" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5c229548-08c4-4dbc-9895-5dbd0ce9c01b/console_3.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql" />
         <option value="$PROJECT_DIR$/database/migrations/2021_01_11_104529_create_torrents_table.php" />
         <option value="$PROJECT_DIR$/app/Torrents.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_10_24_063925_create_torrent_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" />
         <option value="$PROJECT_DIR$/scripts/insert.sh" />
         <option value="$PROJECT_DIR$/scripts/download.sh" />
         <option value="$PROJECT_DIR$/bootstrap/cache/config.php" />
         <option value="$PROJECT_DIR$/app/Jobs/queue.php" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql" />
         <option value="$PROJECT_DIR$/resources/js/vue_learn.js" />
         <option value="$PROJECT_DIR$/resources/js/components/TorrentComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/UploadComponent.vue" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_2.sql" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_3.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_4.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_5.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql" />
+        <option value="$PROJECT_DIR$/config/queue.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_8.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_7.sql" />
+        <option value="$PROJECT_DIR$/scripts/insert_.sh" />
+        <option value="$PROJECT_DIR$/scripts/runDocker.sh" />
         <option value="$PROJECT_DIR$/app/Jobs/execJob.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" />
       </list>
     </option>
   </component>
@@ -359,10 +304,10 @@
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" port="9003" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="-4" />
-    <option name="width" value="1387" />
-    <option name="height" value="904" />
+    <option name="x" value="52" />
+    <option name="y" value="-11" />
+    <option name="width" value="1389" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -495,7 +440,7 @@
     <property name="Constants" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../example" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -615,7 +560,8 @@
       <workItem from="1610243706281" duration="18236000" />
       <workItem from="1610363385781" duration="777000" />
       <workItem from="1610696148904" duration="10760000" />
-      <workItem from="1610709260160" duration="5127000" />
+      <workItem from="1610709260160" duration="5637000" />
+      <workItem from="1610755810756" duration="38420000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1608630825052</created>
@@ -652,11 +598,18 @@
       <option name="project" value="LOCAL" />
       <updated>1610191745108</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="jobs">
+      <created>1610722590270</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610722590270</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283380000" />
+    <option name="totallyTimeSpent" value="322310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,7 +621,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2827" y="-4" width="1387" height="904" extended-state="6" />
+    <frame x="52" y="-11" width="1389" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49962714" weight="0.32988358" />
@@ -676,11 +629,12 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962714" weight="0.32858992" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49888143" weight="0.32858992" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4422073" weight="0.31435964" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.5391499" visible="true" weight="0.32858992" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49384886" visible="true" weight="0.16181953" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4422073" weight="0.29495472" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.5391499" weight="0.28719276" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49384886" visible="true" weight="0.16107382" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32885906" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
       <window_info id="Structure" order="1" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
       <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.57419837" weight="0.36351874" />
       <window_info id="Favorites" order="2" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
@@ -691,7 +645,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +659,8 @@
     <MESSAGE value="working return answer from controller in vue component" />
     <MESSAGE value="waiting to toogle component" />
     <MESSAGE value="delete Componenet" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete Componenet" />
+    <MESSAGE value="jobs" />
+    <option name="LAST_COMMIT_MESSAGE" value="jobs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -723,8 +677,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php</url>
-          <line>100</line>
-          <option name="timeStamp" value="102" />
+          <line>76</line>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -736,7 +690,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="104" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="server.php">
@@ -798,83 +752,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="33" column="72" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#44#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/UploadComponenet.vue" />
-    <entry file="file://$PROJECT_DIR$/storage/app/public/file1.torrent" />
-    <entry file="file://$PROJECT_DIR$/app/torrent.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_01_01_081350_add_votes_to_torrents_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2021_01_01_080608_create_torrents_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_24_061133_user.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -917,13 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -973,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/download.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/TorrentComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
@@ -990,24 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4cce0232-268d-4034-9379-11a5faa978d0/schema/torrent/table/jobs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/UploadComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="885">
           <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1018,21 +864,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/vue_learn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="e#125#170#0" expanded="true" />
-            <marker date="1610707419480" expanded="true" signature="278:484" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_2.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -1043,29 +899,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/queue.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_5.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://4cce0232-268d-4034-9379-11a5faa978d0/schema/torrent/table/jobs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="133" column="38" lean-forward="true" selection-start-line="133" selection-start-column="38" selection-end-line="133" selection-end-column="38" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/vue_learn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <element signature="e#125#170#0" expanded="true" />
+            <marker date="1610707419480" expanded="true" signature="278:484" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/process/Process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="1349" column="23" selection-start-line="1349" selection-start-column="23" selection-end-line="1349" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/LFT.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="61" selection-start-column="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Soul.2020.MVO.1080p.WEB-DL.MegaPeer.mkv_38489.torrent.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/download.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Outside.the.Wire.2021.1080p.WEB-DL.H264-STRONTi_38574.torrent.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_7.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/execJob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="34" column="126" selection-start-line="34" selection-start-column="126" selection-end-line="34" selection-end-column="126" />
+        <state relative-caret-position="541">
+          <caret line="65" column="141" selection-start-line="65" selection-start-column="141" selection-end-line="65" selection-end-column="141" />
           <folding>
-            <element signature="e#28#57#0#PHP" expanded="true" />
+            <element signature="e#28#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/runDocker.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+          <folding>
+            <element signature="e#4988#5884#0#PHP" />
           </folding>
         </state>
       </provider>
