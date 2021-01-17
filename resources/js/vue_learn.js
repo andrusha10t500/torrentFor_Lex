@@ -3,13 +3,14 @@ require('./bootstrap');
 // window.Vue = require('vue');
 
 import Vue from 'vue'
+import router from 'vue-router'
 // import Vuex from 'vuex'
 // Vue.use(Vuex)
 
-import App from './components/LoginComponent'
+import App from './components/AppComponent'
+import Login from './components/LoginComponent'
 import Torrent from './components/TorrentComponent'
 import Upload from './components/UploadComponent'
-
 
 // const store = new Vuex.Store({
 //     state: {
@@ -21,6 +22,12 @@ import Upload from './components/UploadComponent'
 //         }
 //     }
 // });
+
+const routes = [
+    { path : '/', component: Login},
+    { path : '/', component: Torrent},
+    { path : '/', component: Login}
+]
 
 const app = new Vue({
     el: '#app',
