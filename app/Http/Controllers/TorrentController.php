@@ -28,19 +28,11 @@ class torrentController extends Controller
 
     public function showtorrents()
     {
-//        if(Auth::user() != null) {
         $tr=DB::table("torrents")->orderBy("created_at") ->get('*');
-//            $tr = torrent::query()->get('*');
             return response()->json([
                 'data' => $tr
             ],
                 200);
-//        } else {
-//            return response()->json([
-//                'data' => 'Пользователь не аутентифицирован'
-//            ],401);
-//        }
-
     }
 
     /**
@@ -48,7 +40,7 @@ class torrentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($name)
+    public function create()
     {
         //при входе в программу
 //        $this->middleware('auth:api');
@@ -59,10 +51,7 @@ class torrentController extends Controller
         if (torrent::where('user',$user)->count()==0) {
             $torrent->user = $user;
             $torrent->save();
-            return "прошёл в torrent";
         }
-        return "Не прошёл в torrent";
-//        Auth::logout();
     }
 
     /**
@@ -182,6 +171,9 @@ class torrentController extends Controller
         File::delete(storage_path(). "/app/scripts/update_".$name.".sh");
 //      Убить процесс
         $this->killProcess($name);
+//      Удалить Скаченное
+//        $path=Torrents::query()->where('id','=',$id)->value('path');
+//        File::delete($path);
     }
 
     private function killProcess ($name) {

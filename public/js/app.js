@@ -2007,35 +2007,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      show_signin: true,
+      showSignin: true,
       email: null,
       errors: [],
       password: null,
-      reg: 'checkbox-left',
+      userName: null,
       csrf: null
     };
   },
-  created: function created() {// this.fSignIn();
-  },
-  mounted: function mounted() {// console.log('Component mounted.')
-  },
-  updated: function updated() {// console.log(this.email);
-    // console.log(this.password);
-    // console.log(this.validEmail(email));
-    // if(this.email && this.password && this.validEmail(email) && this.show_signin) {
-    // console.log("GO!");
-    // } else {
-    // this.errors.push("Не прошли валидацию.")
-    // console.log("NO!");
-    // }
-  },
+  created: function created() {},
+  mounted: function mounted() {},
+  updated: function updated() {},
   methods: {
     checkForm: function checkForm(e) {
       this.errors = [];
@@ -2050,7 +2036,7 @@ __webpack_require__.r(__webpack_exports__);
         this.errors.push('Не указали Пароль');
       }
 
-      console.log(this.fetchData());
+      this.fetchData();
       e.preventDefault();
     },
     validEmail: function validEmail(email) {
@@ -2061,7 +2047,8 @@ __webpack_require__.r(__webpack_exports__);
     fetchData: function fetchData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/signin", {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/signup", {
+        "userName": this.userName,
         "email": this.email,
         "password": this.password
       }).then(function (response) {
@@ -38414,7 +38401,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.show_signin
+  return _vm.showSignin
     ? _c(
         "form",
         {
@@ -38436,6 +38423,30 @@ var render = function() {
                 )
               ])
             : _vm._e(),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "userName" } }, [_vm._v("Имя")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.userName,
+                expression: "userName"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "userName" },
+            domProps: { value: _vm.userName },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.userName = $event.target.value
+              }
+            }
+          }),
           _vm._v(" "),
           _c("label", { attrs: { for: "email" } }, [_vm._v("Почта")]),
           _vm._v(" "),
@@ -38485,11 +38496,7 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("input", { attrs: { type: "submit", value: "ok" } }),
-          _vm._v(" "),
-          _c("p", { attrs: { id: "hui" } }, [_vm._v(_vm._s(this.show_signin))]),
-          _vm._v(" "),
-          _c("div", { staticClass: "sphere" }, [_c("div", { class: _vm.reg })])
+          _c("input", { attrs: { type: "submit", value: "ok" } })
         ]
       )
     : _vm._e()

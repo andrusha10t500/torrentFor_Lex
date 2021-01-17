@@ -11,8 +11,29 @@ use Illuminate\View\View;
 
 class ApiController extends Controller
 {
-    //
-    public function index(Request $request) {
+    public function signUpPost(Request $request) {
+
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|min:4'
+        ]);
+
+        //создание экземпляра класса User()
+        $user = new User();
+        $user->name = $request['userName'];
+        $user->email = $request['email'];
+        $user->password  = bcrypt($request['password']);
+
+        $user->save();
+
+        Auth::login($user,true);
+
+        return response()->json([
+            'data' => 'Пользователь зарегистрирован и вошёл в систему'
+        ]);
+    }
+
+    public function signInPost(Request $request) {
 
         $this->validate($request, [
            'email' => 'required',
@@ -27,10 +48,6 @@ class ApiController extends Controller
         } else {
             return "Пользователь не аутентифицирован";
         }
-
-//        return redirect()->back();
-//        return ApiResource::collection(User::query()->where("email","Lex@mail.ru"));
-//        return User::query()->where("email", $request["email"] )->get("email");
     }
 
 

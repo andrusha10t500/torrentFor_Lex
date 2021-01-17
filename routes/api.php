@@ -18,5 +18,6 @@ use Illuminate\Http\Request;
 //});
 
 Route::namespace('Api')->group(function() {
-   Route::post('/signin', 'ApiController@index');
+   Route::post('/signin', 'ApiController@signInPost');
+   Route::post('/signup', 'ApiController@signUpPost');
 });

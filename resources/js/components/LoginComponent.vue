@@ -1,7 +1,5 @@
 <template>
-    <!--<div class="row">-->
-        <!--<input type="checkbox" @click="registration" value="reg">-->
-    <!--</div>-->
+    <input type="radio" v-bind:value="showSignup" @click="showSignup = !showSignup">
     <!--Форма авторизации-->
     <form
         class="form-group"
@@ -9,7 +7,7 @@
         action="#"
         @submit="checkForm"
         method="post"
-        v-if="show_signin"
+
     >
 
         <!--Блок ошибок-->
@@ -20,6 +18,14 @@
             </ul>
         </div>
         <!--Блок ошибок-->
+        <label for="userName">Имя</label>
+        <input
+            type="text"
+            v-model="userName"
+            class="form-control"
+            id="userName"
+            v-if="showSignup"
+        >
         <label for="email">Почта</label>
         <input
             class="form-control"
@@ -38,14 +44,6 @@
             v-model="password"
         />
         <input type="submit" value="ok">
-
-        <p id="hui">{{ this.show_signin }}</p>
-
-        <div class="sphere">
-                <div
-                    v-bind:class="reg"
-                ></div>
-        </div>
 
         <!--<input type="hidden" name="token" :value="csrf">-->
     </form>
@@ -103,33 +101,23 @@
     export default {
         data() {
             return {
-                show_signin: true,
+                showSignup: true,
+                showSignin: true,
                 email: null,
                 errors: [],
                 password: null,
-                reg: 'checkbox-left',
+                userName: null,
                 csrf : null
             }
         },
         created() {
-            // this.fSignIn();
+
         },
         mounted() {
-            // console.log('Component mounted.')
+
         },
         updated() {
 
-            // console.log(this.email);
-            // console.log(this.password);
-            // console.log(this.validEmail(email));
-            // if(this.email && this.password && this.validEmail(email) && this.show_signin) {
-
-                // console.log("GO!");
-
-            // } else {
-                // this.errors.push("Не прошли валидацию.")
-                // console.log("NO!");
-            // }
         },
         methods : {
             checkForm: function(e) {
@@ -146,7 +134,7 @@
                     this.errors.push('Не указали Пароль');
                 }
 
-                console.log(this.fetchData());
+                this.fetchData();
 
                 e.preventDefault();
 
@@ -154,14 +142,15 @@
 
             validEmail: function (email) {
                 // var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                var regex = /\s/;
+                var regex =/\s/;
 
                 return regex.test(email);
             },
 
             fetchData: function() {
                 axios
-                    .post("/api/signin", {
+                    .post("/api/signup", {
+                       "userName" : this.userName,
                        "email" : this.email,
                        "password" : this.password
                     })

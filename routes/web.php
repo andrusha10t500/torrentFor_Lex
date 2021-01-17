@@ -20,23 +20,23 @@ Route::post('/signup', [
     'as' => 'signup'
 ]);
 
-Route::get('/routeTorrentController/{name}',  [
-   'uses' => 'torrentController@create',
+Route::get('/routeTorrentController/',  [
+   'uses' => 'TorrentController@create',
    'as' =>  'create',
    'middleware' => 'auth'
 ]);
 
 Route::get('/routeTorrentController', [
-   'uses' => 'torrentController@showtorrents',
+   'uses' => 'TorrentController@showtorrents',
    'as' => 'showtorrents'
 ]);
 
 Route::post('/sendtorrent', [
-   'uses' => 'torrentController@store',
+   'uses' => 'TorrentController@store',
    'as' => 'sendtorrent'
 ]);
 
 Route::post('/deleteTorrent',[
-   'uses' => 'torrentController@deleteTorrent',
+   'uses' => 'TorrentController@deleteTorrent',
    'as' => 'deleteTorrent'
 ]);
