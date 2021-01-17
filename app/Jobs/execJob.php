@@ -44,18 +44,19 @@ class execJob implements ShouldQueue
         $scriptContent = '#!/bin/bash
 
 DBUSER=root
-DBPASSWORD=qt67uy
+DBPASSWORD=qtr67uy
 DATABASE=torrent                        
 
 mysql -u$DBUSER -p$DBPASSWORD -D$DATABASE -e "UPDATE torrents SET download=1, when_downloaded=now() WHERE torrent=\''.$this->name.'\'"
         ';
-        $scriptName='/home/leo/document/torrentFor_Lex/scripts/update_'.$this->name.'.sh';
 
-        File::put($scriptName,$scriptContent);
+        Storage::disk('local')->put('/scripts/update_'.$this->name.'.sh',$scriptContent,'public');
+
+        $scriptPath = storage_path()."/app/scripts/update_".$this->name.".sh";
 
         $shell = Process::fromShellCommandline(
 "
-        chmod +x /home/leo/document/torrentFor_Lex/scripts/update_$this->name.sh
+        chmod +x $scriptPath
         i=51413;
         while [ \$i -le 51433 ]
           do
@@ -63,7 +64,7 @@ mysql -u$DBUSER -p$DBPASSWORD -D$DATABASE -e "UPDATE torrents SET download=1, wh
             PORT=\${IP##*:}
             if [ -z \"\$PORT\" ]
               then 
-                /usr/bin/transmission-cli -p \$i -w /mnt/diskG/films/ $this->nameTorrent -f /home/leo/document/torrentFor_Lex/scripts/update_$this->name.sh;
+                /usr/bin/transmission-cli -p \$i -w /home/\$USER/ '$this->nameTorrent' -f $scriptPath;
                 break
             fi
            i=\$(( i+1 ))

@@ -121,7 +121,7 @@ class torrentController extends Controller
 //
 //            $torrents->when_downloaded=Date('d.m.Y H:i:s');
             if(Torrents::query()
-                    ->where('torrent','=',$name)
+                    ->where('torrent','=', "'". $name . "'")
                     ->count()==0)
             {
 
@@ -173,12 +173,26 @@ class torrentController extends Controller
     public function deleteTorrent(Request $id)
     {
         $id=$id['id'];
-        //торрент удален
         $name = Torrents::query()->where('id','=',$id)->value("torrent");
-//        $pid = Torrents::query()->where('id','=',$id)->value("torrent");
+//      Удалить из базы
         Torrents::query()->where("id",'=',$id)->delete();
+//      Удалить файл торрента
         Storage::disk('local')->delete('/public/'.$name);
-        //удалить скрипт
-        File::delete("/home/leo/document/torrentFor_Lex/scripts/update_".$name.".sh");
+//      Удалить скрипт
+        File::delete(storage_path(). "/app/scripts/update_".$name.".sh");
+//      Убить процесс
+        $this->killProcess($name);
+    }
+
+    private function killProcess ($name) {
+
+        $process=Process::fromShellCommandline("kill -9 $(ps aux | grep ".$name." | awk '$12!~/color/{print($2)}')");
+        $process->run(function ($type, $byte) {
+            if(Process::ERR===$type) {
+                echo 'ERR: '.$type;
+            } else {
+                echo 'OUT: '.$byte;
+            }
+        });
     }
 }

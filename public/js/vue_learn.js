@@ -51263,7 +51263,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
+module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/vue_learn.js */"./resources/js/vue_learn.js");
 
 
 /***/ })

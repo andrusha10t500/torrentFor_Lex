@@ -6,11 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88b3cab9-39a7-4470-a2d7-1958b0907905" name="Default" comment="jobs">
-      <change afterPath="$PROJECT_DIR$/scripts/runDocker.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/execJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/execJob.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_061133_user.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_063925_create_torrent_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_11_104529_create_torrents_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_15_074533_create_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vue_learn.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vue_learn.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,25 +44,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="torrent@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="torrent@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="torrent@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="torrent@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="torrent@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="torrent: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="torrent@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="torrent@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="torrent: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="torrents: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -65,14 +65,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="torrentController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
+      <file leaf-file-name="queue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/queue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
-              <folding>
-                <element signature="e#4988#5884#0#PHP" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console_6.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console_6.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -80,8 +86,8 @@
       <file leaf-file-name="execJob.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/execJob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="65" column="141" selection-start-line="65" selection-start-column="141" selection-end-line="65" selection-end-column="141" />
+            <state relative-caret-position="199">
+              <caret line="66" column="86" selection-start-line="66" selection-start-column="86" selection-end-line="66" selection-end-column="86" />
               <folding>
                 <element signature="e#28#45#0#PHP" expanded="true" />
               </folding>
@@ -89,11 +95,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runDocker.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/runDocker.sh">
+      <file leaf-file-name="torrentController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+            <state relative-caret-position="124">
+              <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
+              <folding>
+                <element signature="e#40#61#0#PHP" expanded="true" />
+                <element signature="e#4334#5230#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6210">
+              <caret line="414" column="13" selection-start-line="414" selection-start-column="13" selection-end-line="414" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -121,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/node_modules/popper.js/dist/popper.js" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/mainpageComponent.vue" />
@@ -170,6 +206,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_7.sql" />
         <option value="$PROJECT_DIR$/scripts/insert_.sh" />
         <option value="$PROJECT_DIR$/scripts/runDocker.sh" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console_6.sql" />
         <option value="$PROJECT_DIR$/app/Jobs/execJob.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/torrentController.php" />
       </list>
@@ -304,10 +341,10 @@
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" port="9003" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="52" />
+    <option name="x" value="40" />
     <option name="y" value="-11" />
-    <option name="width" value="1389" />
-    <option name="height" value="912" />
+    <option name="width" value="1327" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -315,6 +352,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,12 +364,6 @@
               <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
               <item name="torrentFor_Lex" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="torrentFor_Lex" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
@@ -359,12 +391,6 @@
               <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
               <item name="torrentFor_Lex" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="torrentFor_Lex" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="torrentFor_Lex" type="b2602c69:ProjectViewProjectNode" />
@@ -433,7 +459,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -458,6 +483,7 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" activateToolWindowBeforeRun="false" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="127.0.0.1" />
     <configuration default="true" type="LaravelStorm_run_conf_serve" factoryName="Laravel" activateToolWindowBeforeRun="false">
       <option name="host" value="localhost" />
       <option name="port" value="8000" />
@@ -465,7 +491,6 @@
       <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="interpreterName" value="" />
     </configuration>
-    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" activateToolWindowBeforeRun="false" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="127.0.0.1" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -609,7 +634,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322310000" />
+    <option name="totallyTimeSpent" value="330905000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,30 +646,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="-11" width="1389" height="912" extended-state="6" />
+    <frame x="40" y="-11" width="1327" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49962714" weight="0.32988358" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.55779266" side_tool="true" weight="0.29495472" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49962714" weight="0.32917318" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.49179047" side_tool="true" weight="0.34165367" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49888143" weight="0.32761312" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962714" weight="0.32858992" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49888143" weight="0.32858992" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4422073" weight="0.29495472" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.5391499" weight="0.28719276" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49384886" visible="true" weight="0.16107382" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5082095" weight="0.3572543" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.5391499" weight="0.27925116" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49384886" visible="true" weight="0.2877248" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32885906" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3291634" />
       <window_info id="Structure" order="1" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
-      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.57419837" weight="0.36351874" />
       <window_info id="Favorites" order="2" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.57419837" weight="0.3978159" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49384886" visible="true" weight="0.16107382" />
+      <window_info id="Structure" order="1" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49962714" weight="0.32988358" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49888143" weight="0.32858992" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962714" weight="0.32858992" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32885906" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.55779266" side_tool="true" weight="0.29495472" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.57419837" weight="0.36351874" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4422073" weight="0.29495472" />
+      <window_info id="Favorites" order="2" sideWeight="0.50615114" side_tool="true" weight="0.20059657" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,6 +717,16 @@
           <line>76</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php</url>
+          <line>127</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php</url>
+          <line>122</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -690,20 +737,46 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="110" />
+      <option name="time" value="112" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="server.php">
-        <watch expression="Torrents::query(&quot;torrent&quot;)-&gt;where('id','=',$id)" language="PHP" />
-        <watch expression="Torrents::query()-&gt;where('id','=',$id)-&gt;get(&quot;torrent&quot;)" language="PHP" />
-        <watch expression="'/public/'.$name" language="PHP" />
-        <watch expression="Storage::disk('local')-&gt;delete('/public/'.$name)" language="PHP" />
-        <watch expression="$name" language="PHP" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>$scriptName</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>$scriptPath</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>storage_path().&quot;/app/scripts/update_&quot;.$name.'.sh'</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>storage_path()</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Storage::disk('local')-&gt;put('scripts/update_'.$name.'.sh',$scriptContent)</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>\Illuminate\Support\Facades\Storage::disk('local')-&gt;get('scripts/update_'.$name.'.sh')</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Storage::disk('local')-&gt;get('scripts/update_'.$name.'.sh')</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Storage::disk('local')-&gt;delete('/public/'.$name)</expression-string>
         <language-id>PHP</language-id>
@@ -719,46 +792,9 @@
         <language-id>PHP</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>Storage::disk('local')-&gt;delete('/public/'.$name);</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Storage::disk('local')-&gt;delete('/app/public/'.$name);</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$name</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$name['torrent']</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$name-&gt;get(&quot;torrent&quot;)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$name-&gt;get(1)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_01_01_080608_create_torrents_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_24_061133_user.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -780,16 +816,8 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console_2.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5c229548-08c4-4dbc-9895-5dbd0ce9c01b/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5c229548-08c4-4dbc-9895-5dbd0ce9c01b/console_3.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5c229548-08c4-4dbc-9895-5dbd0ce9c01b/console_1.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5c229548-08c4-4dbc-9895-5dbd0ce9c01b/console_3.sql" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_10_24_063925_create_torrent_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -864,80 +892,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_2.sql" />
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_3.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_4.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_3.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_4.sql" />
     <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="442" column="26" selection-start-line="442" selection-start-column="26" selection-end-line="442" selection-end-column="26" />
+        <state relative-caret-position="6210">
+          <caret line="414" column="13" selection-start-line="414" selection-start-column="13" selection-end-line="414" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_5.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_6.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://4cce0232-268d-4034-9379-11a5faa978d0/schema/torrent/table/jobs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_5.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_6.sql" />
+    <entry file="das://4cce0232-268d-4034-9379-11a5faa978d0/schema/torrent/table/jobs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_1.sql" />
     <entry file="file://$PROJECT_DIR$/resources/js/vue_learn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="e#125#170#0" expanded="true" />
-            <marker date="1610707419480" expanded="true" signature="278:484" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/queue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -951,74 +930,14 @@
     <entry file="file://$PROJECT_DIR$/storage/LFT.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_8.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="61" selection-start-column="61" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_Soul.2020.MVO.1080p.WEB-DL.MegaPeer.mkv_38489.torrent.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/download.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/insert_Outside.the.Wire.2021.1080p.WEB-DL.H264-STRONTi_38574.torrent.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_7.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Jobs/execJob.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="65" column="141" selection-start-line="65" selection-start-column="141" selection-end-line="65" selection-end-column="141" />
-          <folding>
-            <element signature="e#28#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_8.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console.sql" />
+    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent" />
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent.sh" />
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Soul.2020.MVO.1080p.WEB-DL.MegaPeer.mkv_38489.torrent.sh" />
+    <entry file="file://$PROJECT_DIR$/scripts/insert_.sh" />
+    <entry file="file://$PROJECT_DIR$/scripts/insert_Outside.the.Wire.2021.1080p.WEB-DL.H264-STRONTi_38574.torrent.sh" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4cce0232-268d-4034-9379-11a5faa978d0/console_7.sql" />
     <entry file="file://$PROJECT_DIR$/scripts/runDocker.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1026,12 +945,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/download.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/scripts/update_Neadekvatnyie.lyudi.2.2020.WEB-DLRip.1400MB.ELE_38410.torrent.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/scripts/update_Человек-паук Возвращение домой - Spider-Man Homecoming (2017) UHD BDRemux 2160p от ExKinoRay | 4K | HDR | Лицензия.torrent.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jobs/execJob.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="66" column="86" selection-start-line="66" selection-start-column="86" selection-end-line="66" selection-end-column="86" />
+          <folding>
+            <element signature="e#28#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/48687845-78ad-42c6-b32a-10c4a9f89314/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/torrentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+        <state relative-caret-position="124">
+          <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
           <folding>
-            <element signature="e#4988#5884#0#PHP" />
+            <element signature="e#40#61#0#PHP" expanded="true" />
+            <element signature="e#4334#5230#0#PHP" />
           </folding>
         </state>
       </provider>
