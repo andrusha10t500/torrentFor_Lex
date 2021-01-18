@@ -2007,11 +2007,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      showSignin: true,
+      showSignup: true,
+      showsignin: false,
       email: null,
       errors: [],
       password: null,
@@ -2020,7 +2022,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {},
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.$emit('showloginchild', this.showSignin);
+  },
   updated: function updated() {},
   methods: {
     checkForm: function checkForm(e) {
@@ -2055,20 +2059,33 @@ __webpack_require__.r(__webpack_exports__);
         // console.log(response.data[0].email);
         console.log(response.data);
         if (response.data != "прошёл в torrent") _this.errors.push(response.data.data);
-        _this.show_signin = false;
       })["catch"](function (error) {
         console.log(error);
 
         _this.errors.push(error);
       });
     },
-    alert: function alert() {
+    alert: function (_alert) {
+      function alert() {
+        return _alert.apply(this, arguments);
+      }
+
+      alert.toString = function () {
+        return _alert.toString();
+      };
+
+      return alert;
+    }(function () {
       // if (this.reg == "checkbox-left") {
       //     this.reg = 'checkbox-right';
       // } else {
       //     this.reg = 'checkbox-left';
       // }
-      console.log(this.reg);
+      alert("123");
+      this.$emit('showloginchild', this.showsignin);
+    }),
+    eventForParent: function eventForParent() {
+      this.$emit('showloginchild', this.showsignin);
     }
   },
   destroyed: function destroyed() {}
@@ -38401,32 +38418,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.showSignin
-    ? _c(
-        "form",
+  return _c(
+    "form",
+    {
+      staticClass: "form-group",
+      attrs: { id: "myForm", action: "#", method: "post" },
+      on: { submit: _vm.checkForm }
+    },
+    [
+      _c(
+        "button",
         {
-          staticClass: "form-group",
-          attrs: { id: "myForm", action: "#", method: "post" },
-          on: { submit: _vm.checkForm }
+          staticClass: "btn btn-success",
+          attrs: { type: "reset" },
+          on: { click: _vm.alert }
         },
-        [
-          _vm.errors.length
-            ? _c("div", [
-                _c("b", [_vm._v("Ошибки:")]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  _vm._l(_vm.errors, function(error) {
-                    return _c("li", [_vm._v(_vm._s(error))])
-                  }),
-                  0
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "userName" } }, [_vm._v("Имя")]),
-          _vm._v(" "),
-          _c("input", {
+        [_vm._v("Событие для родителя")]
+      ),
+      _vm._v(" "),
+      _vm.errors.length
+        ? _c("div", [
+            _c("b", [_vm._v("Ошибки:")]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              _vm._l(_vm.errors, function(error) {
+                return _c("li", [_vm._v(_vm._s(error))])
+              }),
+              0
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "userName" } }, [_vm._v("Имя")]),
+      _vm._v(" "),
+      _vm.showSignup
+        ? _c("input", {
             directives: [
               {
                 name: "model",
@@ -38446,60 +38473,60 @@ var render = function() {
                 _vm.userName = $event.target.value
               }
             }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "email" } }, [_vm._v("Почта")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.email,
-                expression: "email"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { id: "email", type: "text", name: "email" },
-            domProps: { value: _vm.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.email = $event.target.value
-              }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "email" } }, [_vm._v("Почта")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.email,
+            expression: "email"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { id: "email", type: "text", name: "email" },
+        domProps: { value: _vm.email },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
             }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "password" } }, [_vm._v("Пароль")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.password,
-                expression: "password"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", name: "password", id: "password" },
-            domProps: { value: _vm.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.password = $event.target.value
-              }
+            _vm.email = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "password" } }, [_vm._v("Пароль")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.password,
+            expression: "password"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "password", name: "password", id: "password" },
+        domProps: { value: _vm.password },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
             }
-          }),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "submit", value: "ok" } })
-        ]
-      )
-    : _vm._e()
+            _vm.password = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "submit", value: "ok" } })
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51051,8 +51078,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

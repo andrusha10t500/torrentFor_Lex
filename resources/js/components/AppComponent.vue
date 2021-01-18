@@ -1,20 +1,38 @@
 <template>
-    <router-link to="">
+    <div>
+        <input type="button" :value="showlogin"  >
 
-    </router-link>
-    <div class="container">
-        <router-view></router-view>
+
+        <div v-if="!showlogin">
+            <router-link :to="{ name : 'upload' }">upload</router-link>
+        </div>
+
+        <div class="container">
+            <router-view></router-view>
+        </div>
+        <Login v-on:showloginchild="showconsole"></Login>
     </div>
-
 </template>
 
 <script>
-    import vueRouter from 'vue-router';
-    const vuerouter = new vueRouter({
-        routes : routes
-    });
+    import Login from './LoginComponent'
     export default {
-        name: "App"
+        data() {
+            return {
+                showlogin: true,
+            }
+        },
+
+        components :{ Login },
+        created() {
+
+        },
+        methods : {
+            showconsole : function (ev) {
+                console.log(ev);
+            }
+        }
+
     }
 </script>
 

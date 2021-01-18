@@ -1,5 +1,5 @@
 <template>
-    <input type="radio" v-bind:value="showSignup" @click="showSignup = !showSignup">
+    <!--<input type="radio" v-bind:value="showSignup" @click="showSignup = !showSignup">-->
     <!--Форма авторизации-->
     <form
         class="form-group"
@@ -9,7 +9,7 @@
         method="post"
 
     >
-
+        <button class="btn btn-success" type="reset" v-on:click="alert">Событие для родителя</button>
         <!--Блок ошибок-->
         <div v-if="errors.length">
             <b>Ошибки:</b>
@@ -17,7 +17,7 @@
                 <li v-for="error in errors">{{ error }}</li>
             </ul>
         </div>
-        <!--Блок ошибок-->
+        <!--Блок ошибок конец-->
         <label for="userName">Имя</label>
         <input
             type="text"
@@ -102,7 +102,7 @@
         data() {
             return {
                 showSignup: true,
-                showSignin: true,
+                showsignin: false,
                 email: null,
                 errors: [],
                 password: null,
@@ -114,12 +114,13 @@
 
         },
         mounted() {
-
+            this.$emit('showloginchild',this.showSignin);
         },
         updated() {
 
         },
         methods : {
+
             checkForm: function(e) {
 
                 this.errors = [];
@@ -160,7 +161,6 @@
                         if(response.data != "прошёл в torrent")
                             this.errors.push(response.data.data);
 
-                        this.show_signin = false;
                     })
                     .catch(error => {
                         console.log(error);
@@ -173,8 +173,12 @@
                 // } else {
                 //     this.reg = 'checkbox-left';
                 // }
-                console.log(this.reg);
+                alert("123");
+                this.$emit('showloginchild',this.showsignin);
             },
+            eventForParent : function() {
+                this.$emit('showloginchild',this.showsignin);
+            }
 
         },
         destroyed() {
