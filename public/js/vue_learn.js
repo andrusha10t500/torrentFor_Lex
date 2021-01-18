@@ -4865,7 +4865,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {},
   methods: {
     showconsole: function showconsole(ev) {
-      console.log(ev);
+      this.showlogin = ev;
     }
   }
 });
@@ -4995,9 +4995,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {},
-  mounted: function mounted() {
-    this.$emit('showloginchild', this.showSignin);
-  },
+  mounted: function mounted() {},
   updated: function updated() {},
   methods: {
     checkForm: function checkForm(e) {

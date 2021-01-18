@@ -2022,9 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {},
-  mounted: function mounted() {
-    this.$emit('showloginchild', this.showSignin);
-  },
+  mounted: function mounted() {},
   updated: function updated() {},
   methods: {
     checkForm: function checkForm(e) {

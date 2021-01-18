@@ -114,7 +114,7 @@
 
         },
         mounted() {
-            this.$emit('showloginchild',this.showSignin);
+
         },
         updated() {
 

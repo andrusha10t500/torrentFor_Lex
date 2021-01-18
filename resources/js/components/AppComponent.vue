@@ -29,7 +29,7 @@
         },
         methods : {
             showconsole : function (ev) {
-                console.log(ev);
+                this.showlogin = ev;
             }
         }
 
