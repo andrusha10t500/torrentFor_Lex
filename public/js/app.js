@@ -2006,8 +2006,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2054,9 +2052,9 @@ __webpack_require__.r(__webpack_exports__);
         "email": this.email,
         "password": this.password
       }).then(function (response) {
-        // console.log(response.data[0].email);
-        console.log(response.data);
-        if (response.data != "прошёл в torrent") _this.errors.push(response.data.data);
+        alert(response.data.data);
+
+        _this.alert(true);
       })["catch"](function (error) {
         console.log(error);
 
@@ -2064,7 +2062,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     alert: function (_alert) {
-      function alert() {
+      function alert(_x) {
         return _alert.apply(this, arguments);
       }
 
@@ -2073,18 +2071,10 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       return alert;
-    }(function () {
-      // if (this.reg == "checkbox-left") {
-      //     this.reg = 'checkbox-right';
-      // } else {
-      //     this.reg = 'checkbox-left';
-      // }
-      alert("123");
-      this.$emit('showloginchild', this.showsignin);
-    }),
-    eventForParent: function eventForParent() {
-      this.$emit('showloginchild', this.showsignin);
-    }
+    }(function (r) {
+      alert("LoginComponent: " + r);
+      this.$emit('showloginchild', r);
+    })
   },
   destroyed: function destroyed() {}
 });
@@ -38420,20 +38410,10 @@ var render = function() {
     "form",
     {
       staticClass: "form-group",
-      attrs: { id: "myForm", action: "#", method: "post" },
+      attrs: { id: "myForm", method: "post" },
       on: { submit: _vm.checkForm }
     },
     [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-success",
-          attrs: { type: "reset" },
-          on: { click: _vm.alert }
-        },
-        [_vm._v("Событие для родителя")]
-      ),
-      _vm._v(" "),
       _vm.errors.length
         ? _c("div", [
             _c("b", [_vm._v("Ошибки:")]),

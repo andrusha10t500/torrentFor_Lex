@@ -44,11 +44,10 @@ class torrentController extends Controller
     {
         //при входе в программу
 //        $this->middleware('auth:api');
-        $torrent = new torrent();
+        $torrent = new Torrents();
         $user = Auth::user()->name;
         //прописываем в таблице torrent юзера
-//        $torrent->user=$torrent->hasOne('App\User', 'name');
-        if (torrent::where('user',$user)->count()==0) {
+        if (Torrents::where('user',$user)->count()==0) {
             $torrent->user = $user;
             $torrent->save();
         }

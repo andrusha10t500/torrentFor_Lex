@@ -22,7 +22,7 @@ class ApiController extends Controller
         $user = new User();
         $user->name = $request['userName'];
         $user->email = $request['email'];
-        $user->password  = bcrypt($request['password']);
+        $user->password = bcrypt($request['password']);
 
         $user->save();
 
@@ -41,12 +41,18 @@ class ApiController extends Controller
         ]);
         $email = $request["email"];
         $password = $request["password"];
-        if(Auth::attempt(['email' => $email, 'password' => $password],true) ){
+
+        if(Auth::attempt(
+            [
+                'email' => $email,
+                'password' => $password
+            ],true)
+        ){
             $user = Auth::user();
             Auth::login($user, true);
-            return redirect()->route('create',['name' => $user->name]);
+            return redirect()->route('create');
         } else {
-            return "Пользователь не аутентифицирован";
+            return redirect()->back(302,["#"]);
         }
     }
 

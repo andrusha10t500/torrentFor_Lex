@@ -1,35 +1,49 @@
 <template>
     <div>
-        <input type="button" :value="showlogin"  >
 
+        <div  v-if="!uploadComp" class="row">
+            <router-link
+                    class="btn btn-success border-dark"
+                    :to="{ name : 'login' }"
 
-        <div v-if="!showlogin">
-            <router-link :to="{ name : 'upload' }">upload</router-link>
+            >Зарегистрироваться</router-link>
+
+            <router-link
+                    class="btn btn-success border-dark"
+                    :to="{ name : 'signin' }"
+
+            >Войти</router-link>
+        </div>
+
+        <div v-else-if="uploadComp">
+            <router-link
+                    :to="{ name: 'upload' }"
+            >Загрузить торрент</router-link>
         </div>
 
         <div class="container">
-            <router-view></router-view>
+            <router-view
+                    v-on:showloginchild="showconsole"
+            ></router-view>
         </div>
-        <Login v-on:showloginchild="showconsole"></Login>
     </div>
 </template>
 
 <script>
-    import Login from './LoginComponent'
     export default {
         data() {
             return {
-                showlogin: true,
+                uploadComp : false
             }
         },
 
-        components :{ Login },
         created() {
 
         },
         methods : {
             showconsole : function (ev) {
-                this.showlogin = ev;
+                alert("AppComponent: " + ev);
+                this.uploadComp = ev;
             }
         }
 

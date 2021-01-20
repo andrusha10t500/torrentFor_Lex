@@ -16,30 +16,22 @@
             </ul>
         </div>
         <!--Блок ошибок конец-->
-        <label for="userName">Имя</label>
-        <input
-            type="text"
-            v-model="userName"
-            class="form-control"
-            id="userName"
-            v-if="showSignup"
-        >
         <label for="email">Почта</label>
         <input
-            class="form-control"
-            id="email"
-            v-model="email"
-            type="text"
-            name="email"
+                class="form-control"
+                id="email"
+                v-model="email"
+                type="text"
+                name="email"
         />
 
         <label for="password">Пароль</label>
         <input
-            class="form-control"
-            type="password"
-            name="password"
-            id="password"
-            v-model="password"
+                class="form-control"
+                type="password"
+                name="password"
+                id="password"
+                v-model="password"
         />
         <input type="submit" value="ok">
 
@@ -148,24 +140,21 @@
 
             fetchData: function() {
                 axios
-                    .post("/api/signup", {
-                       "userName" : this.userName,
-                       "email" : this.email,
-                       "password" : this.password
+                    .post("/api/signin", {
+                        "email" : this.email,
+                        "password" : this.password
                     })
                     .then(response => {
-                        alert(response.data.data);
                         this.alert(true);
-                    }
 
-                    )
+                    })
                     .catch(error => {
                         console.log(error);
                         this.errors.push(error);
                     })
             },
             alert : function(r) {
-                alert("LoginComponent: " + r);
+
                 this.$emit('showloginchild',r);
             },
 

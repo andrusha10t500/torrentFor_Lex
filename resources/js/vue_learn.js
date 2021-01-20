@@ -8,16 +8,22 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import App from './components/AppComponent'
-// import Login from './components/LoginComponent'
+import Login from './components/LoginComponent'
+import Signin from './components/SigninComponent'
 import Torrent from './components/TorrentComponent'
 import Upload from './components/UploadComponent'
 
 const routes = [
-    // {
-    //     path : '/login',
-    //     name : 'login',
-    //     component: Login
-    // },
+    {
+        path : '/login',
+        name : 'login',
+        component: Login
+    },
+    {
+        path : '/signin',
+        name : 'signin',
+        component: Signin
+    },
     {
         path : '/upload',
         name : 'upload',

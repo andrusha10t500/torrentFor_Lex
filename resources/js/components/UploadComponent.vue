@@ -2,10 +2,8 @@
     <!--Форма ввода-->
     <form
             class="form-group"
-            action="#"
             @submit="sendTorrent"
             method="post"
-            v-if="show_form_insert"
     >
 
         <input type="hidden" name="token" :value="csrf">
@@ -17,14 +15,7 @@
                 name="input_torrent_text"
                 id="input_torrent_text"
         >
-        <!--<input-->
-        <!--class="form-control"-->
-        <!--type="file"-->
-        <!--placeholder="выберите файл"-->
-        <!--name="file_torrent"-->
-        <!--ref="file_torrent"-->
-        <!--v-on:change="FileUpload()"-->
-        <!--&gt;-->
+
         <input type="hidden" name="token" :value="csrf">
         <input type="submit" value="добавить">
     </form>

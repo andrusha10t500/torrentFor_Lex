@@ -15,16 +15,10 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::post('/signup', [
-    'uses' => 'UserController@signup',
-    'as' => 'signup'
-]);
-
-Route::get('/routeTorrentController/',  [
+Route::get('/create',  [
    'uses' => 'TorrentController@create',
-   'as' =>  'create',
-   'middleware' => 'auth'
-]);
+   'as' =>  'create'
+])->middleware('auth');
 
 Route::get('/routeTorrentController', [
    'uses' => 'TorrentController@showtorrents',
