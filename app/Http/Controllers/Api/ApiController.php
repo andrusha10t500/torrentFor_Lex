@@ -52,7 +52,7 @@ class ApiController extends Controller
             Auth::login($user, true);
             return redirect()->route('create');
         } else {
-            return redirect()->back(302,["#"]);
+//            return redirect()->back(302);
         }
     }
 

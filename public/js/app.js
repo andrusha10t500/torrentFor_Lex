@@ -2028,7 +2028,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.email) {
         this.errors.push('Не указали Почту');
-      } else if (!this.validEmail(email)) {
+      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
         this.errors.push('Адрес электронной почты имеет другой формат.');
       }
 
@@ -2038,11 +2038,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.fetchData();
       e.preventDefault();
-    },
-    validEmail: function validEmail(email) {
-      // var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      var regex = /\s/;
-      return regex.test(email);
     },
     fetchData: function fetchData() {
       var _this = this;
