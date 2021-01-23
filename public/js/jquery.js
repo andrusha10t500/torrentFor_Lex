@@ -18066,8 +18066,8 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/leo/document/torrentFor_Lex/node_modules/jquery/dist/jquery.js */"./node_modules/jquery/dist/jquery.js");
-module.exports = __webpack_require__(/*! /home/leo/document/torrentFor_Lex/node_modules/bootstrap/dist/js/bootstrap.js */"./node_modules/bootstrap/dist/js/bootstrap.js");
+__webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/node_modules/jquery/dist/jquery.js */"./node_modules/jquery/dist/jquery.js");
+module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/node_modules/bootstrap/dist/js/bootstrap.js */"./node_modules/bootstrap/dist/js/bootstrap.js");
 
 
 /***/ })
