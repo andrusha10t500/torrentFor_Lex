@@ -13,6 +13,10 @@ import Signin from './components/SigninComponent'
 import Torrent from './components/TorrentComponent'
 import Upload from './components/UploadComponent'
 
+import Authorizedclients from '../assets/js/components/passport/AuthorizedClients'
+import Clients from '../assets/js/components/passport/Clients'
+import Personalaccesstokens from '../assets/js/components/passport/PersonalAccessTokens'
+
 const routes = [
     {
         path : '/login',
@@ -38,7 +42,7 @@ const router = new VueRouter ({
 
 const app = new Vue({
     el: '#app',
-    components: { App, Torrent },
+    components: { App, Torrent, Authorizedclients, Clients, Personalaccesstokens },
     router
 });
 

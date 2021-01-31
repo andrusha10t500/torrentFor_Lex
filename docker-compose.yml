@@ -73,6 +73,7 @@ services:
       - "3307:3306"
     environment:
       MYSQL_DATABASE: torrent
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: qt67uy
     networks:
       - app-network

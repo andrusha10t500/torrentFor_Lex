@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div  v-if="!uploadComp" class="row">
             <router-link
                     class="btn btn-success border-dark"

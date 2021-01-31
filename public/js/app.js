@@ -38534,7 +38534,7 @@ var render = function() {
           _c("tr", [
             _c("td", [
               _vm._v(
-                "\n               " + _vm._s(torrent["id"]) + "\n            "
+                "\n               " + _vm._s(torrent["id"]) + "2\n            "
               )
             ]),
             _vm._v(" "),

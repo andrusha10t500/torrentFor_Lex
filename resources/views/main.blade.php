@@ -8,6 +8,9 @@
 </head>
 <body>
 <div id="app">
+    <Authorizedclients></Authorizedclients>
+    <Clients></Clients>
+    <Personalaccesstokens></Personalaccesstokens>
     <div class="container">
         <App></App>
     </div>

@@ -28,3 +28,4 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 USER www
 CMD ["npm", "run", "dev"]
 CMD ["php-fpm"]
+CMD ["php","artisan","queue:work","--tries=1","--timeout=0","--daemon"]

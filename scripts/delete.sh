@@ -2,8 +2,8 @@
 
 #clear images and containers
 stopped=$(docker ps -qa )
-#containers=$(docker ps -qa -f "status=exited")
-containers=$(docker ps -qa)
+containers=$(docker ps -qa -f "status=exited")
+#containers=$(docker ps -qa)
 images=$(docker images -q)
 
 docker stop $containers

@@ -13,7 +13,7 @@
         <tbody v-for="torrent in torrents">
             <tr>
                 <td>
-                   {{ torrent['id'] }}
+                   {{ torrent['id'] }}2
                 </td>
                 <td>
                     {{ torrent['created_at'] }}
@@ -74,7 +74,6 @@
                     })
                     .catch(error => {
                         this.errors.push(error);
-
                     })
             }
         }
