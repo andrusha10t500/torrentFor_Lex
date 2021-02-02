@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
+
 
 class ApiController extends Controller
 {
@@ -19,18 +21,24 @@ class ApiController extends Controller
         ]);
 
         //создание экземпляра класса User()
-        $user = new User();
-        $user->name = $request['userName'];
-        $user->email = $request['email'];
-        $user->password = bcrypt($request['password']);
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
 
-        $user->save();
+//        $user->name = $request['userName'];
+//        $user->email = $request['email'];
+//        $user->password = bcrypt($request['password']);
+        $success['token'] = $user->createToken('MyApp')->accessToken;
+        $success['name'] = $user->name;
 
-        Auth::login($user,true);
+//        $user->save();
+
+//        Auth::login($user,true);
 
         return response()->json([
-            'data' => 'Пользователь зарегистрирован и вошёл в систему'
-        ]);
+            'success' => $success
+            ]
+        );
     }
 
     public function signInPost(Request $request) {
@@ -49,8 +57,10 @@ class ApiController extends Controller
             ],true)
         ){
             $user = Auth::user();
+            $success['token'] = $user->createToken('MyApp')->accessToken;
             Auth::login($user, true);
-            return redirect()->route('create');
+            return response()->json(['success' => $success],200);
+//            return redirect()->route('create', ['success' => $success]);
         } else {
 //            return redirect()->back(302);
         }

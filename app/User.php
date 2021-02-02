@@ -9,7 +9,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens,  Notifiable;
 
     public function torrent() {
         return $this->hasMany('App/torrent');
@@ -29,9 +29,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-//    protected $hidden = [
-//        'password', 'remember_token',
-//    ];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     /**
      * The attributes that should be cast to native types.

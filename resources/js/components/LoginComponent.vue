@@ -16,12 +16,12 @@
             </ul>
         </div>
         <!--Блок ошибок конец-->
-        <label for="userName">Имя</label>
+        <label for="name">Имя</label>
         <input
             type="text"
-            v-model="userName"
+            v-model="name"
             class="form-control"
-            id="userName"
+            id="name"
             v-if="showSignup"
         >
         <label for="email">Почта</label>
@@ -104,7 +104,7 @@
                 email: null,
                 errors: [],
                 password: null,
-                userName: null,
+                name: null,
                 csrf : null
             }
         },
@@ -143,7 +143,7 @@
             fetchData: function() {
                 axios
                     .post("/api/signup", {
-                       "userName" : this.userName,
+                       "name" : this.name,
                        "email" : this.email,
                        "password" : this.password
                     })

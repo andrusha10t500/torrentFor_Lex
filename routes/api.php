@@ -18,6 +18,8 @@ use Illuminate\Http\Request;
 //});
 
 Route::namespace('Api')->group(function() {
-   Route::post('/signin', 'ApiController@signInPost')->middleware('auth:api');
+//   Route::group(['middleware' => 'auth:api'], function() {
+   Route::post('/signin', 'ApiController@signInPost');
+//   });
    Route::post('/signup', 'ApiController@signUpPost');
 });

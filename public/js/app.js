@@ -2015,7 +2015,7 @@ __webpack_require__.r(__webpack_exports__);
       email: null,
       errors: [],
       password: null,
-      userName: null,
+      name: null,
       csrf: null
     };
   },
@@ -2043,7 +2043,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/signup", {
-        "userName": this.userName,
+        "name": this.name,
         "email": this.email,
         "password": this.password
       }).then(function (response) {
@@ -38423,7 +38423,7 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
-      _c("label", { attrs: { for: "userName" } }, [_vm._v("Имя")]),
+      _c("label", { attrs: { for: "name" } }, [_vm._v("Имя")]),
       _vm._v(" "),
       _vm.showSignup
         ? _c("input", {
@@ -38431,19 +38431,19 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.userName,
-                expression: "userName"
+                value: _vm.name,
+                expression: "name"
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", id: "userName" },
-            domProps: { value: _vm.userName },
+            attrs: { type: "text", id: "name" },
+            domProps: { value: _vm.name },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.userName = $event.target.value
+                _vm.name = $event.target.value
               }
             }
           })
@@ -51051,8 +51051,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/laravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/laravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/leo/Документы/web_projects/torrentFor_Lex/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
